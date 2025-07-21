@@ -55,6 +55,13 @@
             android:background="#2196F3"
             android:textColor="@android:color/white" />
 
+        <Button
+            android:id="@+id/btnAddSpecialUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agregar Usuario Especial"
+            android:visibility="gone"/>
+
     </LinearLayout>
 
 </ScrollView>
