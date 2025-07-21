@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crear Nuevo Usuario"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="32dp"
+            android:textColor="#FF9800" />
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre completo"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="16dp"
+            android:padding="16dp" />
+
+        <EditText
+            android:id="@+id/etCedula"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cédula"
+            android:inputType="text"
+            android:layout_marginBottom="16dp"
+            android:padding="16dp" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Correo electrónico"
+            android:inputType="textEmailAddress"
+            android:layout_marginBottom="16dp"
+            android:padding="16dp" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña (mín. 6 caracteres)"
+            android:inputType="textPassword"
+            android:layout_marginBottom="24dp"
+            android:padding="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cancelar"
+                android:layout_marginEnd="8dp"
+                android:background="#757575"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnCreateUser"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Crear Usuario"
+                android:layout_marginStart="8dp"
+                android:background="#4CAF50"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
+
