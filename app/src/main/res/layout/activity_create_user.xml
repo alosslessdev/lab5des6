@@ -55,6 +55,14 @@
             android:layout_marginBottom="24dp"
             android:padding="16dp" />
 
+        <EditText
+            android:id="@+id/etUserType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tipo de Usuario (1: Admin, 2: Normal, 3: Registrador)"
+            android:inputType="number"
+            android:minHeight="48dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -79,6 +87,13 @@
                 android:layout_marginStart="8dp"
                 android:background="#4CAF50"
                 android:textColor="@android:color/white" />
+            <Button
+                android:id="@+id/btnAddSpecialUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Agregar Usuario Especial"
+                />
+
 
         </LinearLayout>
 
