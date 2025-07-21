@@ -11,7 +11,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.activity.EdgeToEdge;
 import java.io.BufferedReader;
+import java.io.File; // Import File class
 import java.io.FileInputStream;
+import java.io.FileOutputStream; // Import FileOutputStream
+import java.io.IOException; // Import IOException
 import java.io.InputStreamReader;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         sharedPreferences = getSharedPreferences("user_data", MODE_PRIVATE);
+
+        // Call the method to pre-populate the special user file
+        prepopulateSpecialUserFile();
 
         initViews();
         setupClickListeners();
@@ -112,5 +118,33 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return null;
+    }
+
+    /**
+     * Checks if the special user file exists. If not, it creates it and
+     * pre-populates it with default special user credentials.
+     */
+    private void prepopulateSpecialUserFile() {
+        File file = new File(getFilesDir(), SPECIAL_USER_FILE);
+        if (!file.exists()) {
+            // File does not exist, create and populate it
+            String specialUserName = "Usuario Especial";
+            String specialUserCedula = "87654321";
+            String specialUserEmail = "special@user.com";
+            String specialUserPassword = "specialpassword";
+            int specialUserType = 2; // Example: normal user type for the special user
+
+            String userData = specialUserName + "," + specialUserCedula + "," + specialUserEmail + "," + specialUserPassword + "," + specialUserType;
+
+            try {
+                FileOutputStream fos = openFileOutput(SPECIAL_USER_FILE, Context.MODE_PRIVATE);
+                fos.write(userData.getBytes());
+                fos.close();
+                Toast.makeText(this, "Usuario especial pre-creado.", Toast.LENGTH_SHORT).show();
+            } catch (IOException e) {
+                e.printStackTrace();
+                Toast.makeText(this, "Error al pre-crear usuario especial.", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }
